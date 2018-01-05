@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>D3 Bar Chart Tutorial</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<style>
+			body {
+				box-sizing: border-box;
+			}
+
+			#chart {
+				font: 10px sans-serif;
+				background-color: red;
+				text-align: right;
+				margin: 1px;
+				padding: 3px;
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="chart"></div>
+		<script src="https://d3js.org/d3.v3.min.js"  charset="utf-8"></script>
+		<script>
+			var data = [4, 8, 15, 16, 23, 42];
+
+			var chart = d3.select('#chart');
+
+			var bar = chart.append('div').attr('class', '.bar');
+
+			chart.selectAll('.bar');
+
+		</script>
+	</body>
+</html>
