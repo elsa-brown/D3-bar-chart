@@ -21,7 +21,6 @@
 				text-align: right;
 				margin: 1px;
 				padding: 3px;
-				color: white;
 			}
 		</style>
 	</head>
@@ -32,16 +31,23 @@
 		<script src="https://d3js.org/d3.v3.min.js"  charset="utf-8"></script>
 		<script type="text/javascript">
 
-			var data = [4, 8, 15, 16, 23, 42];
+			var data = [
+				{char: 'A', num: 4}, 
+				{char: 'B', num: 8}, 
+				{char: 'C', num: 15}, 
+				{char: 'D', num: 16}, 
+				{char: 'E', num: 23},
+				{char: 'F', num: 42} 
+			];
 
 			var chart = d3.select('.chart');
 
 			chart.selectAll('div')
 				.data(data)
 				.enter().append('div')
-				.style('height', 20 + 'px')
-				.style('width', function(d) {return d * 10 + 'px'})
-				.text(function(d) {return d});
+				.style('height', 12 + 'px')
+				.style('width', function(d) {return d.num * 10 + 'px'})
+				.text(function(d) {return d.char});
 		</script>
 	</body>
 </html>
