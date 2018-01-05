@@ -42,12 +42,18 @@
 
 			var chart = d3.select('.chart');
 
+			var y = '12px';
+			var maxNum = d3.max(data, function(d) { return d.num });
+			var x = d3.scale.linear()
+				.domain([0, maxNum])
+				.range([0, 420]);
+
 			chart.selectAll('div')
 				.data(data)
 				.enter().append('div')
-				.style('height', 12 + 'px')
-				.style('width', function(d) {return d.num * 10 + 'px'})
-				.text(function(d) {return d.char});
+				.style('height', y)
+				.style('width', function(d) { return x(d.num) + 'px'; })
+				.text(function(d) { return d.char; });
 		</script>
 	</body>
 </html>
