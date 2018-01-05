@@ -9,8 +9,14 @@
 				box-sizing: border-box;
 			}
 
-			#chart {
+			.chart {
 				font: 10px sans-serif;
+				margin: 1px;
+				padding: 3px;
+				color: white;
+			}
+
+			.chart div {
 				background-color: red;
 				text-align: right;
 				margin: 1px;
@@ -20,17 +26,22 @@
 		</style>
 	</head>
 	<body>
-		<div id="chart"></div>
+		<div class="container">
+			<div class="chart"></div>
+		</div>
 		<script src="https://d3js.org/d3.v3.min.js"  charset="utf-8"></script>
-		<script>
+		<script type="text/javascript">
+
 			var data = [4, 8, 15, 16, 23, 42];
 
-			var chart = d3.select('#chart');
+			var chart = d3.select('.chart');
 
-			var bar = chart.append('div').attr('class', '.bar');
-
-			chart.selectAll('.bar');
-
+			chart.selectAll('div')
+				.data(data)
+				.enter().append('div')
+				.style('height', 20 + 'px')
+				.style('width', function(d) {return d * 10 + 'px'})
+				.text(function(d) {return d});
 		</script>
 	</body>
 </html>
