@@ -1,0 +1,17 @@
+body {
+	box-sizing: border-box;
+}
+
+.chart {
+	font: 10px sans-serif;
+	margin: 1px;
+	padding: 3px;
+	color: white;
+}
+
+.chart div {
+	background-color: red;
+	text-align: right;
+	margin: 1px;
+	padding: 3px;
+}
