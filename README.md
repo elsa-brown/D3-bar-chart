@@ -1,4 +1,4 @@
-# D3-barChart
+# D3 Bar Chart
 A tutorial I completed to begin learning D3.  
 *via Mike Bostok https://bost.ocks.org/mike/bar/*
 
